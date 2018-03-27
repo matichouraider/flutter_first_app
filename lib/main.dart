@@ -33,6 +33,7 @@ class RandomWordsState extends State<RandomWords> {
         title: new Text('Startup Name Generator'),
         actions: <Widget>[
           new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved),
+          new IconButton(icon: new Icon(Icons.photo), onPressed: _pushPicture),
         ],
       ),
       body: _buildSuggestions(),
@@ -108,6 +109,21 @@ class RandomWordsState extends State<RandomWords> {
           );
         },
       ),
+    );
+  }
+
+  _pushPicture(){
+    Navigator.of(context).push(
+      new MaterialPageRoute(
+        builder: (context){
+          return new Scaffold(
+            appBar: new AppBar(
+              title: new Text("Layout test"),
+            ),
+            body: new Image.asset("images/lake.jpg"),
+          );
+        }
+      )
     );
   }
 }
